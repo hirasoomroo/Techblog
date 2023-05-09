@@ -39,7 +39,7 @@ const userData = [
     {
         username: "hiras",
         twitter: "hiraas",
-        github: "hirasoo",
+        github: "hirasoom",
         email: "phiraasa@gmail.com",
         password: "p@sswordarecool6"
     }
