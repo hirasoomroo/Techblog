@@ -1,14 +1,40 @@
-module.exports = {
-    format_date: date => {
-      return `${new Date(date).getMonth() + 1}/${new Date(date).getDate()}/${new Date(
-        date
-      ).getFullYear()}`;
-    },
-    format_plural: (word, amount) => {
-        if (amount !== 1) {
-          return `${word}s`;
-        }
-    
-        return word;
-    }
-  }
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tech Blog</title>
+  <link rel="stylesheet" href="/stylesheets/style.css">
+</head>
+
+<body>
+  <div class="wrapper">
+      <header class="hero">
+          <div>
+            <nav class"nav">
+                    <a class="link" href="/">home</a>
+                    <a class="link" href="/views/dashboard.handlebars">dashboard</a>
+                    {{#if loggedIn}}
+                    <a class="link" href="/" id="logout">logout</a>
+                    {{else}}
+                    <a class="link" href="/views/login.handlebars">login</a>
+                    {{/if}}
+                </nav>          
+          </div>
+
+          <h1 class="app-title"><i class="fab "></i>Tech Blog</h1>
+      </header>
+
+    <main>
+      {{{ body }}}
+    </main>
+  </div>
+
+    {{#if loggedIn}}
+    <script src="/javascript/logout.js"></script>
+    {{/if}}
+
+</body>
+
+</html>
