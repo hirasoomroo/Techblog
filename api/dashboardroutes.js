@@ -13,7 +13,7 @@ router.get('/', withAuth, (req, res) => {
       attributes: [
         'id',
         'title',
-        'content',
+        'post_text',
         'created_at'
       ],
       include: [
@@ -50,7 +50,7 @@ router.get('/edit/:id', withAuth, (req, res) => {
         },
         attributes: ['id', 
                      'title',
-                     'content',
+                     'post_text',
                      'created_at'
                   ],
         include: [
@@ -83,10 +83,8 @@ router.get('/edit/:id', withAuth, (req, res) => {
         });
 })
 
-
-// redirecting users to sign in page once they sign up
-router.get('/new', (req, res) => {
-    res.render('new-post');
+router.get('/create', (req, res) => {
+    res.render('create');
 });
 
 
